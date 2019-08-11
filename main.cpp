@@ -108,6 +108,9 @@ class HelloTriangleApplication {
 			for (size_t i = 0; i < swapChainImages.size(); i++) {
 				VkImageViewCreateInfo createInfo = {};
 				createInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
+				createInfo.image = swapChainImages[i];
+
+				createInfo.viewType = VK_IMAGE_VIEW_TYPE_2D;
 				createInfo.format = swapChainImageFormat;
 
 				createInfo.components.r = VK_COMPONENT_SWIZZLE_IDENTITY;
